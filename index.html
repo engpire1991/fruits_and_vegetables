@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./icons/style.css">
+</head>
+
+<body>
+  <div id="components">
+    <div class="item-box">
+      <div class="overlay"></div>
+      <div class="mark-overlay"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+  </div>
+  <div id="view">
+    <div>
+      <div class="top-padding">
+        <div>
+          <span>Stadija: </span>
+          <span id="level">1</span>
+        </div>
+        <div id="score-holder">
+          <span>Punkti: </span>
+          <span id="score">0</span>
+        </div>
+      </div>
+      <button id="start-over" onclick="onStartOverClick()">Sākt no sākuma</button>
+      <button id="pauze" onclick="onPauseClick()">Pauze</button>
+    </div>
+    <div>
+      <div id="timer-wrapper">
+        <progress id="timer" value="220" max="220" step="1"></progress>
+      </div>
+      <div id="game-field">
+        <div id="no-more-moves">Vairs nav iespējamu gājienu. Augļi un dārzeņi tiks pārvietoti.</div>
+        <div id="field-overlay" class="show" onclick="onPauseClick()">Spēle ir nopauzēta. Nospied šeit, lai pauzi
+          noņemtu</div>
+      </div>
+    </div>
+    <div class="top-padding">
+      <div>
+        <div>
+          <i class="icon-volume-on"></i>
+          <input id="volume" type="range" min="0" max="100" step="1">
+        </div>
+      </div>
+      <div>
+        <div id="lives-holder">
+          <span>Dzīvības: </span>
+          <span id="lives">6</span>
+        </div>
+        <button id="show-combination" onclick="onShowCombinationClick()">Parādīt priekšā</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./helpers.js"></script>
+  <script src="./classes/block.js"></script>
+  <script src="./classes/gameField.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>

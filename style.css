@@ -1,0 +1,224 @@
+html {
+  /* 1rem = 1.0rem; */
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  height: calc(100vh - 4rem);
+  padding: 2rem;
+  background-color: #4699CC;
+}
+
+span {
+  color: white;
+  font-size: 3rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 1.5rem;
+  background-color: #F5F5F5;
+  border: .1rem solid #48606E;
+  border-radius: 0.6rem;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: black;
+}
+
+#timer-wrapper {
+  background-color: #F5F5F5;
+  height: 2rem;
+  padding: .2rem;
+}
+
+#timer {
+  width: 100%;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+#timer::-webkit-progress-bar {
+  background-color: #F5F5F5;
+  border: .1rem solid black;
+  border-radius: 1rem;
+}
+
+#timer::-webkit-progress-value {
+  background-color: #BA9C33;
+  border: 0.1rem solid #48606E;
+  border-radius: 1rem;
+}
+
+#volume {
+  height: 4rem;
+  -webkit-appearance: none;
+  background-color: inherit;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: .1rem solid #000000;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  background: #58CF50;
+  cursor: pointer;
+  margin-top: -.8rem;
+}
+
+#volume::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1.5rem;
+  cursor: pointer;
+  /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+  background: white;
+  border-radius: 1rem;
+  border: 0.2px solid #010101;
+}
+
+#view {
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  height: 100%;
+}
+
+#view>div {
+  display: flex;
+  flex-direction: column;
+  place-content: space-between;
+}
+
+#view>div:not(:nth-child(2)) {
+  max-width: 21rem;
+  width: 21rem;
+  min-width: 21rem;
+}
+
+#view>div:nth-child(2) {
+  width: 100%;
+  max-width: calc(100vw - 46rem);
+  min-width: 60rem;
+  margin: 0 1rem
+}
+
+#score-holder {
+  margin-top: 4rem;
+}
+
+#game-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  place-content: center center;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: #BEECFB;
+  height: 100%;
+}
+
+#no-more-moves {
+  left: 1rem;
+  right: 1rem;
+  z-index: -1;
+}
+
+#no-more-moves.show {
+  z-index: 2;
+}
+
+#field-overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  place-content: center center;
+}
+
+#field-overlay.show {
+  z-index: 2;
+}
+
+#field-overlay,
+#no-more-moves {
+  position: absolute;
+  z-index: -1;
+  padding: 0 5rem;
+  font-size: 5rem;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+#show-combination {
+  margin-top: 2rem;
+}
+
+#components {
+  display: none;
+}
+
+.top-padding {
+  margin-top: 4rem;
+}
+
+.icon-volume-on {
+  font-size: 4rem;
+}
+
+.item-box {
+  position: relative;
+  cursor: pointer;
+  border: .3rem solid #B5D2F3;
+  /* outline-offset: -.5rem; */
+  width: 4rem;
+  height: 4rem;
+  /* padding: .5rem; */
+  margin: .2rem;
+  box-sizing: border-box;
+}
+
+.item-box.selected {
+  border-color: red;
+}
+
+.item-box .overlay,
+.item-box .mark-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .3;
+}
+
+.item-box.selected .overlay,
+.item-box.marked .mark-overlay {
+  display: block;
+}
+
+.item-box .overlay {
+  background-color: black;
+}
+
+.item-box .mark-overlay {
+  background-color: red;
+}
+
+.item-box-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-box .item {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
